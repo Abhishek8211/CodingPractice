@@ -970,42 +970,108 @@ bool - stores values with two states: true or false
 // }
 
 
-//ROTATING A 2D MATRIX 90 DEGREE
+// //ROTATING A 2D MATRIX 90 DEGREE
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// class Solution {
+// public:
+//     void rotate(vector<vector<int>>& matrix) {
+//         int n = matrix.size();
+
+//         //Transpose
+//         for (int i = 0; i < n; i++) {
+//             for (int j = i + 1; j < n; j++) {
+//                 swap(matrix[i][j], matrix[j][i]);
+//             }
+//         }
+
+//         //Reverse each row
+//         for (int i = 0; i < n; i++) {
+//             reverse(matrix[i].begin(), matrix[i].end());
+//         }
+//     }
+// };
+
+// int main() {
+//     vector<vector<int>> matrix = {{1, 2, 3},{4, 5, 6},{7, 8, 9}};
+
+//     Solution sol;
+//     sol.rotate(matrix);
+
+//     // Print rotated matrix
+//     for (auto &row : matrix) {
+//         for (auto &val : row) {
+//             cout << val << " ";
+//         }
+//         cout << endl;
+//     }
+
+//     return 0;
+// }
+
+
+// PLUS ONE
 #include <bits/stdc++.h>
 using namespace std;
 
 class Solution {
 public:
-    void rotate(vector<vector<int>>& matrix) {
-        int n = matrix.size();
-
-        //Transpose
-        for (int i = 0; i < n; i++) {
-            for (int j = i + 1; j < n; j++) {
-                swap(matrix[i][j], matrix[j][i]);
-            }
+    vector<int> plusOne(vector<int>& digits) {
+        int n = digits.size();
+        double power = pow(10, n-1);
+        int sum = 0;
+        for(int i = 0; i < n; i++){
+            sum += digits[i] * power;
+            power /= 10;
         }
+        sum += 1;
+        vector<int> result;
 
-        //Reverse each row
-        for (int i = 0; i < n; i++) {
-            reverse(matrix[i].begin(), matrix[i].end());
+        while(sum > 0){
+            int digit = sum % 10;
+            result.push_back(digit);
+            sum /= 10;
         }
+        reverse(result.begin(), result.end());
+        return result;
     }
+
+    // int res(vector<int>& digits){
+    //     int n = digits.size();
+    //     double power = pow(10, n-1);
+    //     int sum = 0;
+    //     for(int i = 0; i < n; i++){
+    //         sum += digits[i] * power;
+    //         power /= 10;
+    //     }
+    //     return sum + 1;
+    //     vector<int> result;
+
+    //     while(sum > 0){
+    //         int digit = sum % 10;
+    //         result.push_back(digit);
+    //         sum /= 10;
+    //     }
+    //     reverse(result.begin(), result.end());
+    //     return result;
+    // }
+
 };
 
 int main() {
-    vector<vector<int>> matrix = {{1, 2, 3},{4, 5, 6},{7, 8, 9}};
+    vector<int> digits = {1, 2, 3}; 
 
     Solution sol;
-    sol.rotate(matrix);
-
-    // Print rotated matrix
-    for (auto &row : matrix) {
-        for (auto &val : row) {
-            cout << val << " ";
-        }
-        cout << endl;
+    vector<int> result = sol.plusOne(digits);
+    //int result = sol.res(digits);
+    
+    //cout << "Result: " << result << endl;
+    cout << "Result: ";
+    for (int num : result) {
+        cout << num << " ";
     }
+    cout << endl;
 
     return 0;
 }
