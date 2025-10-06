@@ -1011,67 +1011,67 @@ bool - stores values with two states: true or false
 // }
 
 
-// PLUS ONE
-#include <bits/stdc++.h>
-using namespace std;
+// // PLUS ONE
+// #include <bits/stdc++.h>
+// using namespace std;
 
-class Solution {
-public:
-    vector<int> plusOne(vector<int>& digits) {
-        int n = digits.size();
-        double power = pow(10, n-1);
-        int sum = 0;
-        for(int i = 0; i < n; i++){
-            sum += digits[i] * power;
-            power /= 10;
-        }
-        sum += 1;
-        vector<int> result;
+// class Solution {
+// public:
+//     vector<int> plusOne(vector<int>& digits) {
+//         int n = digits.size();
+//         double power = pow(10, n-1);
+//         int sum = 0;
+//         for(int i = 0; i < n; i++){
+//             sum += digits[i] * power;
+//             power /= 10;
+//         }
+//         sum += 1;
+//         vector<int> result;
 
-        while(sum > 0){
-            int digit = sum % 10;
-            result.push_back(digit);
-            sum /= 10;
-        }
-        reverse(result.begin(), result.end());
-        return result;
-    }
+//         while(sum > 0){
+//             int digit = sum % 10;
+//             result.push_back(digit);
+//             sum /= 10;
+//         }
+//         reverse(result.begin(), result.end());
+//         return result;
+//     }
 
-    // int res(vector<int>& digits){
-    //     int n = digits.size();
-    //     double power = pow(10, n-1);
-    //     int sum = 0;
-    //     for(int i = 0; i < n; i++){
-    //         sum += digits[i] * power;
-    //         power /= 10;
-    //     }
-    //     return sum + 1;
-    //     vector<int> result;
+//     // int res(vector<int>& digits){
+//     //     int n = digits.size();
+//     //     double power = pow(10, n-1);
+//     //     int sum = 0;
+//     //     for(int i = 0; i < n; i++){
+//     //         sum += digits[i] * power;
+//     //         power /= 10;
+//     //     }
+//     //     return sum + 1;
+//     //     vector<int> result;
 
-    //     while(sum > 0){
-    //         int digit = sum % 10;
-    //         result.push_back(digit);
-    //         sum /= 10;
-    //     }
-    //     reverse(result.begin(), result.end());
-    //     return result;
-    // }
+//     //     while(sum > 0){
+//     //         int digit = sum % 10;
+//     //         result.push_back(digit);
+//     //         sum /= 10;
+//     //     }
+//     //     reverse(result.begin(), result.end());
+//     //     return result;
+//     // }
 
-};
+// };
 
-int main() {
-    vector<int> digits = {1, 2, 3}; 
+// int main() {
+//     vector<int> digits = {1, 2, 3}; 
 
-    Solution sol;
-    vector<int> result = sol.plusOne(digits);
-    //int result = sol.res(digits);
+//     Solution sol;
+//     vector<int> result = sol.plusOne(digits);
+//     //int result = sol.res(digits);
     
-    //cout << "Result: " << result << endl;
-    cout << "Result: ";
-    for (int num : result) {
-        cout << num << " ";
-    }
-    cout << endl;
+//     //cout << "Result: " << result << endl;
+//     cout << "Result: ";
+//     for (int num : result) {
+//         cout << num << " ";
+//     }
+//     cout << endl;
 
-    return 0;
-}
+//     return 0;
+// }
