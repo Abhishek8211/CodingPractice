@@ -1075,3 +1075,446 @@ bool - stores values with two states: true or false
 
 //     return 0;
 // }
+
+
+// #include<bits/stdc++.h>
+// using namespace std;
+
+// int fib(int n) {
+//     if(n == 0 || n == 1) return n;
+//     return fib(n-1) + fib(n-2);
+//     // int a = 0, b = 1, c;
+//     // for(int i = 2; i <= n; i++){
+//     //     c = a + b;
+//     //     a = b;
+//     //     b = c;
+//     // }
+//     // return b;
+// }
+
+// int main(){
+//     int n;
+//     cin >> n;
+//     for(int i = 0; i < n; i++){
+//         cout << fib(i) << " ";
+//     }
+//     return 0;
+// }
+
+// //check whether the number is prime or not
+// #include<bits/stdc++.h>
+// using namespace std;
+
+// bool prime(int n){
+//     if(n <= 1) 
+//     return false;
+//     for(int i = 2; i <= n/2; i++){
+//         if(n % i == 0) return false;
+//     }
+//     return true;
+// }
+
+// int main(){
+//     int n;
+//     cin >> n;
+//     if(prime(n)){
+//         cout << "Prime";
+//     }
+//     else{
+//         cout << "Not a prime";
+//     }
+//     return 0;
+// }
+
+// #include<bits/stdc++.h>
+// using namespace std;
+
+// int factor(int n){
+//     for(int i = 1; i <= n; i++){
+//         if(n % i == 0){
+//             cout << i << " ";
+//         }
+//     }
+//     return 0;
+// }
+
+// int main(){
+//     int n = 144;
+//     factor(n);
+//     return 0;
+// }
+
+
+// #include<bits/stdc++.h>
+// using namespace std;
+
+// int main(){
+//     int n = 19;
+//     int s = 3 ;
+    
+//     int ne = n;
+//     int i = n;
+//     while(true){
+//         if(i%s == 0){
+//             ne = i;
+//             break;
+//         }
+//         i++;
+        
+//     }
+//     cout << ne - n; 
+//     return 0;
+// }
+
+// #include<bits/stdc++.h>
+// using namespace std;
+
+// int main(){
+//     int sum = 0;
+//     int n;
+//     while(true){
+//         cin >> n;
+//         if(n % 2 != 0){
+//             sum += n;
+//         }else break;
+//     }
+//     cout << sum;
+// }
+
+
+// //ROTATING AN ARRAY BY K ELEMENTS   
+// #include<bits/stdc++.h>
+// using namespace std;
+
+// int main(){
+//     int arr[10] = {1,2,3,4,5,6,7,8,9,10};
+//     int n = 10;
+//     int k = 3;
+//     int newn[10] = {};
+//     for(int i = 0; i < n; i++){
+//         newn[(i + k) % n] = arr[i];
+//     }
+//     for(int i = 0; i < n; i++){
+//         cout << newn[i] << " ";
+//     }
+//     return 0;
+// }
+
+// // 2ND METHOD FOR ROTATING AN ARRAY BY K ELEMENTS
+// #include<bits/stdc++.h>
+// using namespace std;
+
+// int main(){
+//     int arr[10] = {1,2,3,4,5,6,7,8,9,10};
+//     int n = 10;
+//     int k = 3;
+//     k = k % n;
+//     reverse(arr, arr + n);
+//     reverse(arr, arr + k);  
+//     reverse(arr + k, arr + n);
+//     for(int i = 0; i < n; i++){
+//         cout << arr[i] << " ";
+//     }
+//     return 0;
+// }
+
+// #include<bits/stdc++.h>
+// using namespace std;
+
+// bool prime(int n){
+//     if(n <= 1) return false;
+//     for(int i = 2; i <= n/2; i++){
+//         if(n % i == 0) return false;
+//     }
+//     return true;
+// }
+
+// int main(){
+//     int n;
+//     cin >> n;
+//     if(prime(n)){
+//         cout << "Prime";
+//     }
+//     else{
+//         cout << "Not a prime";
+//     }
+// }
+
+// #include<bits/stdc++.h>
+// using namespace std;
+
+// void prime(int a, int b){
+//     for(int i = a; i < b; i++){
+//         bool prime= true;
+//         for(int j = 2; j < i/2; j++){
+//             if(i % j == 0){
+//                 prime = false;
+//                 break;
+//             }
+//         }
+//         if(prime){
+//             cout << i << " ";
+//         }
+//     }
+// }
+
+// int main(){
+//     int a = 21; int b = 40;
+//     //prime(a,b);
+//     int temp=0;
+//     for(int i = a; i < b; i++){
+//         for(int j = 2; j < i/2; j++){
+//             if(i%j == 0){
+//                 temp=1;
+//                 break;
+//             }
+//         }
+//     }
+    
+
+//     return 0;
+// }
+
+
+
+//CLASS
+// #include<bits/stdc++.h>
+// using namespace std;    
+
+// class ComplexNumber{
+// public:
+//     float a;
+//     float b;
+//     ComplexNumber(float real, float imag){
+//         a = real;
+//         b = imag;
+//     }
+// };
+
+// ComplexNumber addtwonum(ComplexNumber c1, ComplexNumber c2){
+//     float real = c1.a + c2.a;
+//     float imag = c1.b + c2.b;
+//     ComplexNumber c3 = ComplexNumber(real, imag);
+//     return c3;
+// }
+
+// ComplexNumber subtracttwonum(ComplexNumber c1, ComplexNumber c2){
+//     float real = c1.a - c2.a;
+//     float imag = c1.b - c2.b;
+//     ComplexNumber c3 = ComplexNumber(real, imag);
+//     return c3;
+// }
+
+// ComplexNumber multiplytwonum(ComplexNumber c1, ComplexNumber c2){
+//     float real = c1.a * c2.a - c1.b * c2.b;
+//     float imag = c1.a * c2.b + c1.b * c2.a;
+//     ComplexNumber c3 = ComplexNumber(real, imag);
+//     return c3;
+// }
+
+// void printc(ComplexNumber c){
+//     cout << c.a << ((c.a > 0) ? " + " : " ") << c.b << "i" << endl;
+// }
+
+
+// int main(){
+//     ComplexNumber c1 = ComplexNumber(7.1, 50);
+//     ComplexNumber c2 = ComplexNumber(2.9, -38);
+//     printc(c1);
+//     printc(c2);
+
+//     ComplexNumber c3 = addtwonum(c1, c2);
+//     printc(c3);
+
+//     ComplexNumber c4 = subtracttwonum(c1, c2);
+//     printc(c4);
+
+//     ComplexNumber c5 = multiplytwonum(c1, c2);
+//     printc(c5);
+//     return 0;
+// }
+
+// #include <bits/stdc++.h>
+// #include <iomanip>
+// using namespace std;
+
+// class Details {
+// public: 
+//     string name;
+//     double weight;
+//     double duration;
+
+//     Details() {}
+
+//     Details(string name, double weight, double duration) {
+//         this->name = name;
+//         this->weight = weight;
+//         this->duration = duration;
+//     }
+
+//     double cal() {
+//         return (weight * duration) / 60;
+//     }
+// };
+
+// int main() {
+//     int n;
+//     cin >> n;
+
+//     vector<Details> arr;
+//     double ans = 0;
+
+//     for (int i = 0; i < n; i++) {
+//         string name;
+//         double weight, duration;
+//         cin >> name >> weight >> duration;
+//         arr.push_back(Details(name, weight, duration));
+//         ans += arr[i].cal();
+//     }
+
+//     cout << fixed << setprecision(2);
+//     cout << ans;
+
+//     return 0;
+// }
+
+
+// #include <bits/stdc++.h>
+// using namespace std;        
+
+// class Box{
+// private:
+//     int length;
+//     int breadth;
+//     int height;
+// public:
+//     Box(int l, int b, int h) {
+//         length = l;
+//         breadth = b;
+//         height = h;
+//     }
+
+//     int volume() {
+//         return length * breadth * height;
+//     }
+
+//     void print(){
+//         cout << "Volume: " << volume() << endl;
+//     }
+
+//     friend int area(Box b);
+// };
+
+// int area(Box b) {
+//     return 2 * (b.length * b.breadth + b.breadth * b.height + b.height * b.length);
+// }
+
+// int main(){
+//     Box b1(3, 4, 5);
+//     b1.print();
+//     cout << "Area: " << area(b1) << endl;
+//     return 0;
+// }
+
+
+// //LINKED LIST
+// #include <iostream>
+// using namespace std;
+
+// class Node{
+// public:
+//     int data;
+//     Node* next;
+
+//     Node(int val){
+//         data = val;
+//         next = NULL;   
+//     }
+// };
+
+// int count(Node* head){
+//     Node* temp = head;
+//     int cnt = 0;
+//     while(temp != NULL){
+//         cnt++;
+//         temp = temp->next;
+//     }
+//     return cnt;
+// }
+
+// int main(){
+//     Node* n1 = new Node(1);
+//     Node* n2 = new Node(2);
+//     Node* n3 = new Node(3);
+//     Node* n4 = new Node(4);
+//     Node* n5 = new Node(5);
+
+//     n1->next = n2;
+//     n2->next = n3;
+//     n3->next = n4;
+//     n4->next = n5;
+
+//     cout <<"Number of nodes: "<< count(n1) << endl;
+
+//     cout << "Data at n3 -> " << n3->data << endl;
+
+//     return 0;
+// }
+
+
+
+// DELETE FIRST NODE IN LINKED LIST
+#include<iostream>
+using namespace std;
+
+class Node{
+public:
+    int data;
+    Node* next;
+
+    Node(int val){
+        data = val;
+        next = NULL;
+    }
+
+
+};
+
+void print(Node* head){
+    Node* temp = head;
+    while(temp != NULL){
+        cout << temp->data <<" ";
+        temp = temp->next;
+    }
+}
+
+void deleteFirst(Node* head){
+    Node* temp = head;
+    head = head->next;
+    temp = NULL;
+    print(head);
+
+}
+
+int main(){
+    Node* n1 = new Node(1);
+    Node* n2 = new Node(2);
+    Node* n3 = new Node(3);
+    Node* n4 = new Node(4);
+    Node* n5 = new Node(5);
+
+
+    n1 -> next = n2;
+    n2 -> next = n3;
+    n3 -> next = n4;
+    n4 -> next = n5;
+
+    // cout << n1 -> data <<endl;
+    // cout << n1 -> next -> next -> data << endl; 
+    // cout << n5 -> next -> next << endl; // return 0
+
+    print(n1);
+    cout << endl;
+    deleteFirst(n1);
+    return 0;
+}

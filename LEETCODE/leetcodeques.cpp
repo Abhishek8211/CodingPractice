@@ -160,25 +160,113 @@
 //     return 0;
 // }
 
+
+
+
+// /*
+
+// Given an m x n integer matrix matrix, if an element is 0, set its entire row and column to 0's.
+
+// You must do it in place.
+
+ 
+
+// Example 1:
+
+
+// Input: matrix = [[1,1,1],[1,0,1],[1,1,1]]
+// Output: [[1,0,1],[0,0,0],[1,0,1]]
+// Example 2:
+
+
+// Input: matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]]
+// Output: [[0,0,0,0],[0,4,5,0],[0,3,1,0]]
+ 
+
+// */
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// class Solution {
+// public:
+//     void setZeroes(vector<vector<int>>& matrix) {
+//         int rows = matrix.size();
+//         int cols = matrix[0].size();
+
+//         vector<int> row;
+//         vector<int> col;
+
+//         for (int i = 0; i < rows; i++) {
+//             for (int j = 0; j < cols; j++) {
+//                 if (matrix[i][j] == 0) {
+//                     row.push_back(i);
+//                     col.push_back(j);
+//                 }
+//             }
+//         }
+
+//         for (int i = 0; i < row.size(); i++) {
+//             int r = row[i];
+//             int c = col[i];
+
+//             for (int k = 0; k < rows; k++) {
+//                 matrix[k][c] = 0;
+//             }
+
+//             for (int j = 0; j < cols; j++) {
+//                 matrix[r][j] = 0;
+//             }
+//         }
+//     }
+// };
+
+// int main() {
+//     vector<vector<int>> matrix = {{0, 1, 2, 0}, {3, 4, 5, 2}, {1, 3, 1, 5}};
+
+//     Solution sol;
+//     sol.setZeroes(matrix);
+
+//     cout << "Matrix after setting zeroes:\n";
+//     for (int i = 0; i < matrix.size(); i++) {
+//         for (int j = 0; j < matrix[0].size(); j++) {
+//             cout << matrix[i][j] << " ";
+//         }
+//         cout << endl;
+//     }
+
+//     return 0;
+// }
+
+
 /*
+164. Maximum Gap
 
-Given an m x n integer matrix matrix, if an element is 0, set its entire row and column to 0's.
+Medium
+Topics
+premium lock icon
+Companies
+Given an integer array nums, return the maximum difference between two successive elements in its sorted form. If the array contains less than two elements, return 0.
 
-You must do it in place.
+You must write an algorithm that runs in linear time and uses linear extra space.
 
  
 
 Example 1:
 
-
-Input: matrix = [[1,1,1],[1,0,1],[1,1,1]]
-Output: [[1,0,1],[0,0,0],[1,0,1]]
+Input: nums = [3,6,9,1]
+Output: 3
+Explanation: The sorted form of the array is [1,3,6,9], either (3,6) or (6,9) has the maximum difference 3.
 Example 2:
 
-
-Input: matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]]
-Output: [[0,0,0,0],[0,4,5,0],[0,3,1,0]]
+Input: nums = [10]
+Output: 0
+Explanation: The array contains less than 2 elements, therefore return 0.
  
+
+Constraints:
+
+1 <= nums.length <= 105
+0 <= nums[i] <= 109
 
 */
 
@@ -187,63 +275,32 @@ using namespace std;
 
 class Solution {
 public:
-    void setZeroes(vector<vector<int>>& matrix) {
-        int rows = matrix.size();
-        int cols = matrix[0].size();
-
-        vector<pair<int, int>> zeros;
-
-        // Step 1: Find all positions where matrix[i][j] == 0
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                if (matrix[i][j] == 0) {
-                    zeros.push_back({i, j});
-                }
-            }
+    int maximumGap(vector<int>& nums) {
+        if (nums.size() < 2) {
+            return 0;
         }
 
-        // 🔹 Print all zero positions
-        cout << "Zero positions found at:" << endl;
-        for (auto p : zeros) {
-            cout << "(" << p.first << ", " << p.second << ")" << endl;
-        }
+        sort(nums.begin(), nums.end());
 
-        // Step 2: Commented out (set rows & cols to zero)
-        /*
-        for (auto [a, b] : zeros) {
-            for (int j = 0; j < cols; j++) {
-                matrix[a][j] = 0;
-            }
-            for (int i = 0; i < rows; i++) {
-                matrix[i][b] = 0;
+        int prevdiff = 0;
+        for (int i = 1; i < nums.size(); i++) {
+            int diff = nums[i] - nums[i - 1];
+            if (diff > prevdiff) {
+                prevdiff = diff;
             }
         }
-        */
-
-        /*
-        OTHER METHOD
-        for (int k = 0; k < zeros.size(); k++) {
-            int a = zeros[k].first;
-            int b = zeros[k].second;
-
-            for (int j = 0; j < cols; j++) {
-                matrix[a][j] = 0;
-            }
-
-            for (int i = 0; i < rows; i++) {
-                matrix[i][b] = 0;
-            }
-        }
-        
-        */
+        return prevdiff;
     }
 };
 
 int main() {
-    vector<vector<int>> matrix = {{0, 1, 2, 0},{3, 4, 5, 2},{1, 3, 1, 5}};
-
     Solution sol;
-    sol.setZeroes(matrix);
+
+    vector<int> nums = {1, 10000000};
+
+    int result = sol.maximumGap(nums);
+
+    cout << "Maximum Gap: " << result << endl;
 
     return 0;
 }
