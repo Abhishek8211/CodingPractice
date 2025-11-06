@@ -1463,58 +1463,146 @@ bool - stores values with two states: true or false
 
 
 
-// DELETE FIRST NODE IN LINKED LIST
-#include<iostream>
+// // DELETE FIRST NODE IN LINKED LIST
+// #include<iostream>
+// using namespace std;
+
+// class Node{
+// public:
+//     int data;
+//     Node* next;
+
+//     Node(int val){
+//         data = val;
+//         next = NULL;
+//     }
+
+
+// };
+
+// void print(Node* head){
+//     Node* temp = head;
+//     while(temp != NULL){
+//         cout << temp->data <<" ";
+//         temp = temp->next;
+//     }
+// }
+
+// void deleteFirst(Node* head){
+//     Node* temp = head;
+//     head = head->next;
+//     temp->next = NULL;
+//     print(head);
+
+// }
+
+// int main(){
+//     Node* n1 = new Node(1);
+//     Node* n2 = new Node(2);
+//     Node* n3 = new Node(3);
+//     Node* n4 = new Node(4);
+//     Node* n5 = new Node(5);
+
+
+//     n1 -> next = n2;
+//     n2 -> next = n3;
+//     n3 -> next = n4;
+//     n4 -> next = n5;
+
+//     // cout << n1 -> data <<endl;
+//     // cout << n1 -> next -> next -> data << endl; 
+//     // cout << n5 -> next -> next << endl; // return 0
+
+//     print(n1);
+//     cout << endl;
+//     deleteFirst(n1);
+//     return 0;
+// }
+
+// #include<stdio.h>
+// using namespace std;
+
+// int main(){
+//     int n;
+//     printf("Enter the number of elements: ");
+//     scanf("%d", &n);
+//     int arr[n];
+//     for(int i = 0; i < n; i++){
+//         scanf("%d", &arr[i]);
+//     }
+
+//     int pos, val;
+//     printf("Enter the position to insert the element: ");
+//     scanf("%d", &pos);
+//     printf("Enter the value to insert: ");
+//     scanf("%d", &val);
+//     // for(int i = n-1; i >= pos-1; i--){
+//     //     arr[i+1] = arr[i];
+//     // }
+//     // arr[pos-1] = val;
+//     // n++;
+//     printf("Array after insertion: ");
+//     for(int i = 0; i < pos-1; i++){
+//         printf("%d ", arr[i]);
+//     }
+//     printf("%d ", val);
+//     for(int i = pos-1; i < n; i++){
+//         printf("%d ", arr[i]);
+//     }
+    
+//     return 0;
+// }
+
+
+// #include<stdio.h>
+
+// int main(){
+//     int a[5] = {1,2,3,4,5};
+//     int b[5] = {1,2,3,4,5};
+//     int arr[10];
+//     for(int i = 0; i < 5; i++){
+//         arr[i] = a[i];
+//     }
+//     for(int i = 0; i < 5; i++){
+//         arr[i+5] = b[i];
+//     }
+//     for(int i = 0; i < 10; i++){
+//         printf("%d ", arr[i]);
+//     }
+// }
+
+// POINTERS
+
+// #include <iostream>
+// using namespace std;
+
+// int main() {
+//     int a;
+//     a = 10;
+//     cout << "a = "<<a<<endl;
+//     int *ptr = &a;
+//     cout<<"Address of a: " << ptr<<endl;
+//     cout<<"Address of ptr: " << &ptr<<endl;
+//     cout<<"Value of a via ptr: "<< *ptr<<endl;
+//     return 0;
+// }
+
+#include<bits/stdc++.h>
 using namespace std;
 
-class Node{
-public:
-    int data;
-    Node* next;
-
-    Node(int val){
-        data = val;
-        next = NULL;
+void show(int *p, int n){
+    for(int i = 0; i < n; i++){
+        cout << p[i] << " ";
     }
-
-
-};
-
-void print(Node* head){
-    Node* temp = head;
-    while(temp != NULL){
-        cout << temp->data <<" ";
-        temp = temp->next;
-    }
-}
-
-void deleteFirst(Node* head){
-    Node* temp = head;
-    head = head->next;
-    temp = NULL;
-    print(head);
-
+    cout<< endl;
 }
 
 int main(){
-    Node* n1 = new Node(1);
-    Node* n2 = new Node(2);
-    Node* n3 = new Node(3);
-    Node* n4 = new Node(4);
-    Node* n5 = new Node(5);
-
-
-    n1 -> next = n2;
-    n2 -> next = n3;
-    n3 -> next = n4;
-    n4 -> next = n5;
-
-    // cout << n1 -> data <<endl;
-    // cout << n1 -> next -> next -> data << endl; 
-    // cout << n5 -> next -> next << endl; // return 0
-
-    print(n1);
-    cout << endl;
-    deleteFirst(n1);
+    int arr[5] = {1,2,3,4,5};
+    show(arr, 5);
+    for(int i = 0; i < 5; i++){
+        cout << *(arr + i) << " ";
+    }
+    
     return 0;
 }

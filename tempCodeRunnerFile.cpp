@@ -1,4 +1,10 @@
-n1 -> next = n2;
-    // n2 -> next = n3;
-    // n3 -> next = n4;
-    // n4 -> next = n5;
+ // cout << "Inserting at head" << endl;
+    // print(head);
+
+    // //INSERT AT HEAD
+    // insertathead(head, 20);
+    // print(head);
+
+    // //INSERT 3rd element AT HEAD
+    // insertathead(head, 30);
+    // print(head);
