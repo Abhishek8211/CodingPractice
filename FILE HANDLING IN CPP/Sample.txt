@@ -1,0 +1,4 @@
+Hello, this is a sample file created using C++ file handling.
+This file demonstrates basic file operations in C++.
+Appending new line to the file.
+Appending new line to the file.
