@@ -146,21 +146,139 @@
 
 
 
-#include<iostream>
-using namespace std;
+// #include<iostream>
+// using namespace std;
 
-class Distance{
-    int meters;
-public:
-    Distance(int m): meters(m) {}
-    void display(){
-        cout << "Distance: " << meters << " meters" << endl;
-    }
-};
+// class Distance{
+//     int meters;
+// public:
+//     Distance(int m): meters(m) {}
+//     void display(){
+//         cout << "Distance: " << meters << " meters" << endl;
+//     }
+// };
 
-int main(){
-    int val = 10;
-    Distance d = val;
-    d.display();
-    return 0;
-}
+// int main(){
+//     int val = 10;
+//     Distance d = val;
+//     d.display();
+//     return 0;
+// }
+
+
+// #include <iostream>
+// using namespace std;
+
+// class Distance{
+//     float meters;
+// public:
+//     void operator=(float m){
+//         meters = m;
+//     }
+
+//     void display(){
+//         cout << "Distance: " << meters << " meters" << endl;
+//     }
+// };
+
+// int main(){
+//     Distance d;
+//     d = 15.5f;
+//     d.display();
+// }
+
+
+// #include <iostream>
+// using namespace std;
+
+// class Time{
+//     int hours, minutes;
+// public:
+//     Time(int);
+//     void display();
+// }; 
+
+// Time::Time(int totalMinutes){
+//     hours = totalMinutes / 60;
+//     minutes = totalMinutes % 60;
+// }
+
+// void Time::display(){
+//     cout << "Hours: " << hours << ", Minutes: " << minutes << endl;
+// }
+
+// int main(){
+//     int duration = 130;
+//     Time t = duration;
+//     t.display();
+
+//     return 0;
+// }
+
+
+// #include <iostream>
+// using namespace std;
+
+// class Distance{
+//     int km, m;
+// public:
+//     Distance(int a, int b): km(a), m(b) {}
+
+//     operator float(){
+//         return km * 1000 + m;
+//     }
+
+// };
+
+// int main(){
+//     Distance d(3, 250);
+//     float meters = d; // Implicit conversion
+//     cout << "Distance in meters: " << meters << " m" << endl;
+//     return 0;
+// }
+
+// #include <iostream>
+// using namespace std;
+
+// class Temperature{
+//     float far;
+// public:
+//     Temperature(float f): far(f) {}
+
+//     operator float(){
+//         return (far - 32) * 5.0 / 9.0;
+//     }
+// };
+
+// int main(){
+//     Temperature t(98.6);
+//     float celsius = t;
+//     cout <<"Temperature in Celsius : " << celsius;
+//     return 0;
+// }
+
+// #include <iostream>
+// using namespace std;
+
+// class Temperature{
+//     float cel;
+// public:
+//     Temperature(float);
+//     void display();
+// };
+
+// Temperature::Temperature(float f){
+//     cel = (f - 32) * 5/9.0;
+// }
+
+// void Temperature::display(){
+//     float celsius = cel;
+//     cout << "Temperature in Celsius: " << celsius << endl;
+// }
+
+// int main(){
+//     float far = 98.6;
+//     Temperature t(far);
+//     t.display();
+//     return 0;
+// }
