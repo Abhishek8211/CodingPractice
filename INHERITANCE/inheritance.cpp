@@ -99,9 +99,228 @@ Displaying all details of Car and Truck
 // }
 
 
-#include <iostream>
+// // Single Level Inheritance Example
+// #include <iostream>
+// using namespace std;
+
+// class Human{
+// public:
+//     string name;
+//     int age;
+// };
+
+// class Student : public Human{
+// public:
+//     int RegistrationID;
+
+//     void display(){
+//         cout << "Name: " << name << endl;
+//         cout << "Age: " << age << endl;
+//         cout << "Student ID: " << RegistrationID << endl;
+//     }
+// };
+
+// int main(){
+//     Student s;
+//     s.name = "Abhishek";
+//     s.age = 20;
+//     s.RegistrationID = 12414062;
+
+//     s.display();
+//     return 0;
+// }
+
+
+// // Multi-Level Inheritance Example
+// #include <iostream>
+// using namespace std;
+
+// class LivingThings{
+// public:
+//     void Live(){
+//         cout << "Living things can live." << endl;
+//     }
+// };
+
+// class Animals : public LivingThings{
+// public:
+//     void Eat(){
+//         cout << "Animals can eat." << endl;
+//     }
+// };
+
+// class Dog : public Animals{
+// public:
+//     void Bark(){
+//         cout << "Dog can bark." << endl;
+//     }
+
+//     void display(){
+//         Live(); // From LivingThings
+//         Eat();  // From Animals
+//         Bark(); // From Dog
+//     }
+// };
+
+// int main(){
+//     Dog d;
+//     d.display();
+//     return 0;
+// }
+
+
+// // Multiple Inheritance Example
+// #include <iostream>
+// using namespace std;
+
+// class Father{
+// public:
+//     void drive(){
+//         cout << "Father loves driving." << endl;
+//     }
+// };
+
+// class Mother{
+// public:
+//     void cook(){
+//         cout << "Mother loves cooking." << endl;
+//     }
+// };
+
+// class Child : public Father, public Mother{
+// public:
+//     void play(){
+//         cout << "Child loves playing." << endl;
+//     }
+//     driveFromFather(){
+//         drive(); // From Father
+//     }
+//     cookFromMother(){
+//         cook(); // From Mother
+//     }
+// };
+
+// int main(){
+//     Child c;
+//     c.play();
+//     c.driveFromFather();
+//     c.cookFromMother();
+//     return 0;
+// }
+
+
+// // Hierarchical Inheritance 
+// //Meaning: one parent -> multiple childrens
+
+// #include <iostream>
+// using namespace std;
+
+// // Meaning: one parent → multiple children (same parent class, several subclasses).
+// // Real life: Vehicle → Car and Vehicle → Truck (Car and Truck both are Vehicles).
+
+// class Vehicle {
+// public:
+//     string brand;
+//     int speed;
+// };
+
+// class Car : public Vehicle {
+// public:
+//     int seats;
+//     void show() {
+//         cout << "Car - " << brand << ", " << speed << " km/h, seats: " << seats << '\n';
+//     }
+// };
+
+// class Truck : public Vehicle {
+// public:
+//     int capacity;
+//     void show() {
+//         cout << "Truck - " << brand << ", " << speed << " km/h, capacity: " << capacity << " tons\n";
+//     }
+// };
+
+// int main() {
+//     Car c;
+//     c.brand = "Honda"; c.speed = 160; c.seats = 5;
+//     Truck t;
+//     t.brand = "Tata"; t.speed = 110; t.capacity = 12;
+//     c.show();
+//     t.show();
+//     return 0;
+// }
+
+// 3 CLASSES WITH MULTILEVEL INHERITANCE
+
+// #include<iostream>
+// using namespace std;
+
+// class A{
+// public:
+//     A(){
+//         cout << "Constructor of Class A" << endl;
+//     }
+
+//     ~A(){
+//         cout << "Destructor of Class A" << endl;
+//     }
+// };
+
+// class B : public A{
+// public:
+//     B(){
+//         cout << "Constructor of Class B" << endl;
+//     }
+
+//     ~B(){
+//         cout << "Destructor of Class B" << endl;
+//     }
+// };
+
+// class C : public B{
+// public:
+//     C(){
+//         cout << "Constructor of Class C" << endl;
+//     }
+
+//     ~C(){
+//         cout << "Destructor of Class C" << endl;
+//     }
+// };
+
+// int main(){
+//     C obj;
+//     return 0;
+// }
+
+
+// MAKE THREE CLASSES IN THE STRUCTURE OF MULTILEVEL INHERITANCE AND MAKE PARAMETERIZED CONSTRUCTORS FOR EACH CLASS
+#include<iostream>
 using namespace std;
 
-class Parent{
-
+class A{
+public:
+    A(int a){
+        cout << "Constructor of Class A with value: " << a << endl;
+    }
 };
+
+class B : public A{
+public:
+    B(int a, int b) : A(a){
+        cout << "Constructor of Class B with value: " << b << endl;
+    }
+};
+
+class C : public B{
+public:
+    C(int a, int b, int c) : B(a, b){
+        cout << "Constructor of Class C with value: " << c << endl;
+    }
+};
+
+int main(){
+    C objc(10,9,8);
+   
+    return 0;
+}
